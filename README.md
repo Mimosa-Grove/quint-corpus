@@ -11,17 +11,17 @@ specifications. Two tools read these bytes and must agree about them:
   entries as its drift detector. Its findings over this fixed population move
   when the audit changes.
 
-quint-audit 0.34.0 checked its verified specification set against this corpus.
+quint-audit checks its verified specification set against this corpus.
 This corpus is also the reference population for any later version of the audit
-that reads the 0.34.0 declaration kinds.
+that reads the [Quint](https://quint.sh) 0.34.0 declaration kinds.
 
 ## Layout
 
 | group | contents | entries |
 |---|---|---|
-| `corpus/real/` | specifications written for the house projects, from their own repositories | 47 |
+| `corpus/real/` | specifications written for the Maintainer's personal projects, taken from their respective repositories | 47 |
 | `corpus/third-party/` | upstream specifications, vendored with their licence texts | 18 |
-| `corpus/synthetic/` | entries written for the corpus, two at 0.33.1 and eight at 0.34.0 | 10 |
+| `corpus/synthetic/` | synthetic entries written for the corpus, two at 0.33.1 and eight at 0.34.0 | 10 |
 
 `corpus/PROVENANCE.md` is the authority for every entry: origin, licence,
 declared minimum Quint version and a SHA-256 digest of the file's bytes. A file
@@ -63,8 +63,8 @@ done
 The reports land in a fresh temporary directory, outside the repository, one per
 entry at the entry's own relative path under that directory.
 
-Two Quint binaries give the full picture: 0.33.1 for the original 67 entries
-and 0.34.0 for all 75. A sweep with 0.33.1 alone refuses the 0.34-only entries,
+Two Quint binaries provide the full picture: 0.33.1 for the original 67 entries
+and 0.34.0 for all 75. A sweep with 0.33.1 alone refuses the 0.34.0-only entries,
 which is the intended signal rather than a failure.
 
 ### Reference figures
@@ -85,8 +85,8 @@ One entry cannot run under either version:
 non-ASCII byte, which the audit's source gate refuses by design. It parses
 under both Quint versions.
 
-Under 0.33.1 the eight 0.34-only entries cannot run at all. They are the eight
-extra could-not-run results in that row, and their findings exist only in the
+Under 0.33.1 the eight 0.34.0-only entries cannot run at all. They are the eight
+extra could-not-run results in that row and their findings exist only in the
 0.34.0 row. The 0.34.0 row over the original 67 entries is identical to the
 0.33.1 row. The corpus is stable across the two releases. The difference
 between the first two rows is the eight new entries.
