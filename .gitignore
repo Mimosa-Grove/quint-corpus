@@ -1,0 +1,5 @@
+# Local sweep and editor noise; nothing here belongs in the corpus.
+sweep-*.json
+*.err
+*~
+.DS_Store
